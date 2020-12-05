@@ -1,6 +1,6 @@
 # halyavino_board
 В этом репозитории содержится исходный код прошивки для платы halyavino.
-![Alt-text](https://github.com/NikitaKhalyavin/halyavino_board/raw/master/board_image.png "Изображение платы")
+![Alt-text](https://github.com/NikitaKhalyavin/halyavino_board/raw/master/board_image.jpg "Изображение платы")
 1) Микроконтроллер stm32f103. Для конфигурации и управления периферией используется библиотека HAL (генерированная с помощью CubeMX)/
 2) Разъём USB, через него посредством прошивки должна осуществляться загрузка файлов в SPI_flash. 
 Поскольку винда не даёт запускать какие угодно драйверы, используется тип устройства USB_HID
