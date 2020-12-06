@@ -1,8 +1,6 @@
 #include "global_device_manager.h"
-#include <main.h>
 #include <stdbool.h>
-
-extern TIM_HandleTypeDef htim1;
+#include <calling_timer_control.h>
 
 const unsigned int numberOfLedChannels = 6;
 static uint32_t timeOfStart = 0;
@@ -32,10 +30,10 @@ void startAll(uint32_t startTime)
     {
         ledChannels[i].startRecording(&(ledChannels[i]));
     }
-    //activate TIM3 and it's interrupts for auto device controlling
+    
+    //allow handling of devices in timer's interrupts
+    startCallingTimerWork();
     timeOfStart = startTime;
-    //HAL_TIM_Base_Start(&htim1);
-    HAL_TIM_Base_Start_IT(&htim1);
   
 }
 
@@ -58,9 +56,9 @@ void handleAllDevices(uint32_t currentTime)
     }
     if(!isAnyRecording)
     {
-        //recording is finished - deactivate TIM3
-        //HAL_TIM_Base_Stop(&htim1);
-        HAL_TIM_Base_Stop_IT(&htim1);
+        //deactivate timer's interrupts
+        stopCallingTimerWork();
+        //return system to the wait state
     }
     
 }

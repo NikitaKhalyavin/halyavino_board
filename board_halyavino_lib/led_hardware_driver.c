@@ -32,7 +32,7 @@ int setChannelPWM_Value (LedChannel channel, uint32_t value)
     return 0;
 }
 
-int ledHardwareInit(LedChannel channel)
+void ledHardwareInit(LedChannel channel)
 {
     extern TIM_HandleTypeDef htim1;
     extern TIM_HandleTypeDef htim3;
@@ -67,11 +67,10 @@ int ledHardwareInit(LedChannel channel)
         default:
             //error: unexisting led channel
             setStatusLedOn();
-            return -1;
     }   
 }
 
-int ledHardwareDeinit(LedChannel channel)
+void ledHardwareDeinit(LedChannel channel)
 {
     extern TIM_HandleTypeDef htim1;
     extern TIM_HandleTypeDef htim3;
@@ -106,7 +105,6 @@ int ledHardwareDeinit(LedChannel channel)
         default:
             //error: unexisting led channel
             setStatusLedOn();
-            return -1;
     }
     
 }

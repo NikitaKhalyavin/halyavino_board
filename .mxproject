@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=D:/repositories/dollies/last_board/dollies_controller_board/Inc
+HeaderPath=D:/repositories/dollies/halyavino_board/Inc
 HeaderFiles=stm32f1xx_it.h;stm32f1xx_hal_conf.h;main.h;usb_device.h;usbd_conf.h;usbd_desc.h;usbd_custom_hid_if.h;ffconf.h;user_diskio.h;fatfs.h;
-SourcePath=D:/repositories/dollies/last_board/dollies_controller_board/Src
+SourcePath=D:/repositories/dollies/halyavino_board/Src
 SourceFiles=stm32f1xx_it.c;stm32f1xx_hal_msp.c;main.c;usb_device.c;usbd_conf.c;usbd_desc.c;usbd_custom_hid_if.c;user_diskio.c;fatfs.c;
 
 [PreviousLibFiles]

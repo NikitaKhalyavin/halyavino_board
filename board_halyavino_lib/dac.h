@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 void setDacValue(uint8_t value);
-void disableSpeaker();
-void enableSpeaker();
+void disableSpeaker(void);
+void enableSpeaker(void);
 
 #endif

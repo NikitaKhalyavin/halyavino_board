@@ -5,9 +5,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-static bool checkLedFileHeader(char* file);
+static bool isLedFileHeaderCorrect(uint8_t* file);
 
-void readFileFunction (void * this, const char * fileName)
+static void readFileFunction (void * this, const char * fileName)
 {
     LedFileDescriptor * descriptor = (LedFileDescriptor*)this;
     //it will be rewrite if no errors occured
@@ -24,7 +24,11 @@ void readFileFunction (void * this, const char * fileName)
 //        //to do: error handle
 //        return;
 //    }        
-        
+    if(!isLedFileHeaderCorrect(readBuff))
+    {
+        //error: incorrect file format
+        return;
+    }
     descriptor->pointNumber = (uint8_t)(readBuff[3]);
     
     void* pointArray = malloc(descriptor->pointNumber * sizeof(LedFilePoint));
@@ -77,7 +81,7 @@ static uint32_t getChannelValueFunction(void * this, float currentTimeInSeconds)
         //this is start of file - value is zero
         return 0;
     }
-    float maxTime = descriptor->pointArray[descriptor->pointNumber - 1].timeInSeconds;
+    
     if(currentTimeInSeconds >= descriptor->pointArray[descriptor->pointNumber - 1].timeInSeconds)
     {
         //this is end of file - value is zero
@@ -105,7 +109,7 @@ static uint32_t getChannelValueFunction(void * this, float currentTimeInSeconds)
     float endValue = nextPoint.value;
     float deltaValue = endValue - startValue;
     float newValue = startValue + (deltaValue * timeSinceLast / fullTimeRangeLength);
-    uint32_t resultValue = (uint32_t)(newValue*10000);
+    uint32_t resultValue = (uint32_t)(newValue * TIMER_COUNTER_MAX_VALUE);
     
     return resultValue;
 }
@@ -129,13 +133,13 @@ void ledFileDescriptorInit(LedFileDescriptor * descriptor)
 
 
 //return true if header of file is 0xAA, 0xBB, 0xCC
-static bool checkLedFileHeader(char* file)
+static bool isLedFileHeaderCorrect(uint8_t* file)
 {
-    if(file[0] != (char)0xAA)
+    if(file[0] != (uint8_t)0xAA)
         return false;
-    if(file[1] != (char)0xBB)
+    if(file[1] != (uint8_t)0xBB)
         return false;
-    if(file[2] != (char)0xCC)
+    if(file[2] != (uint8_t)0xCC)
         return false;
     return true;
     

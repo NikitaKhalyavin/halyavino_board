@@ -9,7 +9,7 @@ typedef enum{LED_CHANNEL_1, LED_CHANNEL_2, LED_CHANNEL_3, LED_CHANNEL_4, LED_CHA
 int setChannelPWM_Value(LedChannel channel, uint32_t value);
 
 //prepare for PWM generating
-int ledHardwareInit(LedChannel channel);
-int ledHardwareDeinit(LedChannel channel);
+void ledHardwareInit(LedChannel channel);
+void ledHardwareDeinit(LedChannel channel);
 
 #endif

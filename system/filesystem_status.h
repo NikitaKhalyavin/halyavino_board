@@ -6,4 +6,3 @@ typedef enum{FILE_NOT_OPENED, FILE_NOT_FOUND, FILE_SIZE_ERROR, FILE_READING_ERRO
 
 
 #endif
-    
