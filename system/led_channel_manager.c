@@ -24,7 +24,7 @@ static void linkFile(void * this, const char* fileName)
     
     //TO_DO: error message processing
     manager->linkedFile->readFile(manager->linkedFile, fileName);
-    if(manager->linkedFile->status == LED_FILE_RECORDING)
+    if(manager->linkedFile->status == FILE_RECORDING)
     {
         //success
         manager->status = DEVICE_STATUS_WAIT;
@@ -55,8 +55,8 @@ static void ledChannelStartRecording(void* this)
         manager->status = DEVICE_STATUS_ERROR;
         return;
     }
-    if((manager->linkedFile->status == LED_FILE_EMPTY) || 
-        (manager->linkedFile->status == LED_FILE_ERROR))
+    if((manager->linkedFile->status == FILE_EMPTY) || 
+        (manager->linkedFile->status == FILE_ERROR))
     {
         //unable to record an empty file
         manager->status = DEVICE_STATUS_ERROR;
@@ -71,7 +71,7 @@ static void ledChannelStartRecording(void* this)
 static void setHardwarePWM_Value(void * this, float timeFromBeginning)
 {
     LedChannelManager * manager = (LedChannelManager*) this;
-    if(manager->linkedFile->status == LED_FILE_EMPTY)
+    if(manager->linkedFile->status == FILE_EMPTY)
     {
         manager->endRecording(this);
     }

@@ -11,7 +11,7 @@ static void readFileFunction (void * this, const char * fileName)
 {
     LedFileDescriptor * descriptor = (LedFileDescriptor*)this;
     //it will be rewrite if no errors occured
-    descriptor->status = LED_FILE_ERROR;
+    descriptor->status = FILE_ERROR;
     
     uint8_t readBuff[512] = {170, 187, 204, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63,
 0, 0, 128, 63, 154, 153, 153, 63, 0, 0, 0, 0, 0, 0, 160, 64,
@@ -69,7 +69,7 @@ static void readFileFunction (void * this, const char * fileName)
         descriptor->pointArray[i] = point;
     }
     
-    descriptor->status = LED_FILE_RECORDING;
+    descriptor->status = FILE_RECORDING;
 }
 
 
@@ -85,7 +85,7 @@ static uint32_t getChannelValueFunction(void * this, float currentTimeInSeconds)
     if(currentTimeInSeconds >= descriptor->pointArray[descriptor->pointNumber - 1].timeInSeconds)
     {
         //this is end of file - value is zero
-        descriptor->status = LED_FILE_ENDED;
+        descriptor->status = FILE_ENDED;
         return 0;
     }
     
@@ -119,6 +119,7 @@ static void closeFileFunction(void * this)
     LedFileDescriptor * descriptor = (LedFileDescriptor *) this;
     void * dataArray = (void*) descriptor->pointArray;
     free(dataArray);
+    descriptor->status = FILE_EMPTY;
 }
     
 void ledFileDescriptorInit(LedFileDescriptor * descriptor)
@@ -128,7 +129,7 @@ void ledFileDescriptorInit(LedFileDescriptor * descriptor)
     descriptor->close = closeFileFunction;
     descriptor->pointNumber = 0;
     descriptor->pointArray = NULL;
-    descriptor->status = LED_FILE_EMPTY;
+    descriptor->status = FILE_EMPTY;
 }
 
 

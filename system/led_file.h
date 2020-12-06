@@ -1,6 +1,8 @@
 #ifndef LED_FILE_H
 #define LED_FILE_H
+
 #include "stdint.h"
+#include "file_status.h"
 
 typedef struct
 {
@@ -8,7 +10,6 @@ typedef struct
     float value;
 } LedFilePoint;
 
-typedef enum{LED_FILE_RECORDING, LED_FILE_ENDED, LED_FILE_ERROR, LED_FILE_EMPTY} FileStatus;
 
 typedef void(*ReadFileFunction)(void * this, const char * fileName);
 typedef uint32_t(*GetChannelValueFunction)(void * this, float currentTimeInSeconds);

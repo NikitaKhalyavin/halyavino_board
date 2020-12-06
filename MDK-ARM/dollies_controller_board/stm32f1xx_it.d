@@ -37,4 +37,5 @@ dollies_controller_board\stm32f1xx_it.o: ..\system\global_device_manager.h
 dollies_controller_board\stm32f1xx_it.o: ..\system\led_channel_manager.h
 dollies_controller_board\stm32f1xx_it.o: ..\board_halyavino_lib\led_hardware_driver.h
 dollies_controller_board\stm32f1xx_it.o: ..\system\led_file.h
+dollies_controller_board\stm32f1xx_it.o: ..\system\file_status.h
 dollies_controller_board\stm32f1xx_it.o: ..\system\device_manager_status.h

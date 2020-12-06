@@ -1,9 +1,9 @@
 Dependencies for Project 'dollies_controller_board', Target 'dollies_controller_board': (DO NOT MODIFY !)
-F (startup_stm32f103xb.s)(0x5FCCE2F5)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o dollies_controller_board\startup_stm32f103xb.o --depend dollies_controller_board\startup_stm32f103xb.d)
-F (../Src/main.c)(0x5FCCE2F2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\main.o --omf_browse dollies_controller_board\main.crf --depend dollies_controller_board\main.d)
-I (../Inc/main.h)(0x5FCCE2F2)
+F (startup_stm32f103xb.s)(0x5FCCEBCF)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o dollies_controller_board\startup_stm32f103xb.o --depend dollies_controller_board\startup_stm32f103xb.d)
+F (../Src/main.c)(0x5FCCEBCC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\main.o --omf_browse dollies_controller_board\main.crf --depend dollies_controller_board\main.d)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -33,34 +33,35 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
-I (../Inc/fatfs.h)(0x5FCCE2F1)
+I (../Inc/fatfs.h)(0x5FCCEBCB)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x5FBFB022)
-I (../Inc/ffconf.h)(0x5FCCE2F1)
+I (../Inc/ffconf.h)(0x5FCCEBCB)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x5FBFB022)
-I (../Inc/user_diskio.h)(0x5FCCE2F1)
-I (../Inc/usb_device.h)(0x5FCCE2F1)
+I (../Inc/user_diskio.h)(0x5FCCEBCB)
+I (../Inc/usb_device.h)(0x5FCCEBCB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5FBFB022)
-I (../Inc/usbd_conf.h)(0x5FCCE2F1)
+I (../Inc/usbd_conf.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (..\system\global_device_manager.h)(0x5FCAAC18)
 I (..\system\led_channel_manager.h)(0x5FCC07BA)
 I (..\board_halyavino_lib\led_hardware_driver.h)(0x5FCC0829)
-I (..\system\led_file.h)(0x5FCAC34C)
+I (..\system\led_file.h)(0x5FCCEF6A)
+I (..\system\file_status.h)(0x5FCCEF56)
 I (..\system\device_manager_status.h)(0x5FCC07C1)
-F (../Src/user_diskio.c)(0x5FCCE2F1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\user_diskio.o --omf_browse dollies_controller_board\user_diskio.crf --depend dollies_controller_board\user_diskio.d)
+F (../Src/user_diskio.c)(0x5FCCEBCB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\user_diskio.o --omf_browse dollies_controller_board\user_diskio.crf --depend dollies_controller_board\user_diskio.d)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5FBFB022)
-I (../Inc/ffconf.h)(0x5FCCE2F1)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/ffconf.h)(0x5FCCEBCB)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -92,14 +93,14 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 I (..\spi_flash\spi_flash.h)(0x5E441B31)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DB71C6)
-F (../Src/fatfs.c)(0x5FCCE2F1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\fatfs.o --omf_browse dollies_controller_board\fatfs.crf --depend dollies_controller_board\fatfs.d)
-I (../Inc/fatfs.h)(0x5FCCE2F1)
+F (../Src/fatfs.c)(0x5FCCEBCB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\fatfs.o --omf_browse dollies_controller_board\fatfs.crf --depend dollies_controller_board\fatfs.d)
+I (../Inc/fatfs.h)(0x5FCCEBCB)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x5FBFB022)
-I (../Inc/ffconf.h)(0x5FCCE2F1)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/ffconf.h)(0x5FCCEBCB)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -131,9 +132,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x5FBFB022)
-I (../Inc/user_diskio.h)(0x5FCCE2F1)
-F (../Src/usb_device.c)(0x5FCCE2F1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usb_device.o --omf_browse dollies_controller_board\usb_device.crf --depend dollies_controller_board\usb_device.d)
-I (../Inc/usb_device.h)(0x5FCCE2F1)
+I (../Inc/user_diskio.h)(0x5FCCEBCB)
+F (../Src/usb_device.c)(0x5FCCEBCB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usb_device.o --omf_browse dollies_controller_board\usb_device.crf --depend dollies_controller_board\usb_device.d)
+I (../Inc/usb_device.h)(0x5FCCEBCB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x5FBFB020)
@@ -143,7 +144,7 @@ I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5FBFB020)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5FBFB020)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5FBFB035)
@@ -166,18 +167,18 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5FBFB022)
-I (../Inc/usbd_conf.h)(0x5FCCE2F1)
+I (../Inc/usbd_conf.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5FBFB022)
-I (../Inc/usbd_desc.h)(0x5FCCE2F2)
+I (../Inc/usbd_desc.h)(0x5FCCEBCB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h)(0x5FBFB022)
-I (../Inc/usbd_custom_hid_if.h)(0x5FCCE2F2)
-F (../Src/usbd_conf.c)(0x5FCCE2F1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usbd_conf.o --omf_browse dollies_controller_board\usbd_conf.crf --depend dollies_controller_board\usbd_conf.d)
+I (../Inc/usbd_custom_hid_if.h)(0x5FCCEBCB)
+F (../Src/usbd_conf.c)(0x5FCCEBCB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usbd_conf.o --omf_browse dollies_controller_board\usbd_conf.crf --depend dollies_controller_board\usbd_conf.d)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x5FBFB020)
@@ -187,7 +188,7 @@ I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5FBFB020)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5FBFB020)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5FBFB035)
@@ -210,24 +211,24 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5FBFB022)
-I (../Inc/usbd_conf.h)(0x5FCCE2F1)
+I (../Inc/usbd_conf.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h)(0x5FBFB022)
-F (../Src/usbd_desc.c)(0x5FCCE2F2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usbd_desc.o --omf_browse dollies_controller_board\usbd_desc.crf --depend dollies_controller_board\usbd_desc.d)
+F (../Src/usbd_desc.c)(0x5FCCEBCB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usbd_desc.o --omf_browse dollies_controller_board\usbd_desc.crf --depend dollies_controller_board\usbd_desc.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5FBFB022)
-I (../Inc/usbd_conf.h)(0x5FCCE2F1)
+I (../Inc/usbd_conf.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -260,19 +261,19 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5FBFB022)
-I (../Inc/usbd_desc.h)(0x5FCCE2F2)
-F (../Src/usbd_custom_hid_if.c)(0x5FCCE2F2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usbd_custom_hid_if.o --omf_browse dollies_controller_board\usbd_custom_hid_if.crf --depend dollies_controller_board\usbd_custom_hid_if.d)
-I (../Inc/usbd_custom_hid_if.h)(0x5FCCE2F2)
+I (../Inc/usbd_desc.h)(0x5FCCEBCB)
+F (../Src/usbd_custom_hid_if.c)(0x5FCCEBCB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usbd_custom_hid_if.o --omf_browse dollies_controller_board\usbd_custom_hid_if.crf --depend dollies_controller_board\usbd_custom_hid_if.d)
+I (../Inc/usbd_custom_hid_if.h)(0x5FCCEBCB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5FBFB022)
-I (../Inc/usbd_conf.h)(0x5FCCE2F1)
+I (../Inc/usbd_conf.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -304,10 +305,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5FBFB022)
-F (../Src/stm32f1xx_it.c)(0x5FCCE2F2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_it.o --omf_browse dollies_controller_board\stm32f1xx_it.crf --depend dollies_controller_board\stm32f1xx_it.d)
-I (../Inc/main.h)(0x5FCCE2F2)
+F (../Src/stm32f1xx_it.c)(0x5FCCEBCC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_it.o --omf_browse dollies_controller_board\stm32f1xx_it.crf --depend dollies_controller_board\stm32f1xx_it.d)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -337,16 +338,17 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_it.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_it.h)(0x5FCCEBCC)
 I (..\system\global_device_manager.h)(0x5FCAAC18)
 I (..\system\led_channel_manager.h)(0x5FCC07BA)
 I (..\board_halyavino_lib\led_hardware_driver.h)(0x5FCC0829)
-I (..\system\led_file.h)(0x5FCAC34C)
+I (..\system\led_file.h)(0x5FCCEF6A)
+I (..\system\file_status.h)(0x5FCCEF56)
 I (..\system\device_manager_status.h)(0x5FCC07C1)
-F (../Src/stm32f1xx_hal_msp.c)(0x5FCCE2F2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_msp.o --omf_browse dollies_controller_board\stm32f1xx_hal_msp.crf --depend dollies_controller_board\stm32f1xx_hal_msp.d)
-I (../Inc/main.h)(0x5FCCE2F2)
+F (../Src/stm32f1xx_hal_msp.c)(0x5FCCEBCC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_msp.o --omf_browse dollies_controller_board\stm32f1xx_hal_msp.crf --depend dollies_controller_board\stm32f1xx_hal_msp.d)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -378,7 +380,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_gpio_ex.o --omf_browse dollies_controller_board\stm32f1xx_hal_gpio_ex.crf --depend dollies_controller_board\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -410,7 +412,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_pcd.o --omf_browse dollies_controller_board\stm32f1xx_hal_pcd.crf --depend dollies_controller_board\stm32f1xx_hal_pcd.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -442,7 +444,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_pcd_ex.o --omf_browse dollies_controller_board\stm32f1xx_hal_pcd_ex.crf --depend dollies_controller_board\stm32f1xx_hal_pcd_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -474,7 +476,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_ll_usb.o --omf_browse dollies_controller_board\stm32f1xx_ll_usb.crf --depend dollies_controller_board\stm32f1xx_ll_usb.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -506,7 +508,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal.o --omf_browse dollies_controller_board\stm32f1xx_hal.crf --depend dollies_controller_board\stm32f1xx_hal.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -538,7 +540,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_rcc.o --omf_browse dollies_controller_board\stm32f1xx_hal_rcc.crf --depend dollies_controller_board\stm32f1xx_hal_rcc.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -570,7 +572,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_rcc_ex.o --omf_browse dollies_controller_board\stm32f1xx_hal_rcc_ex.crf --depend dollies_controller_board\stm32f1xx_hal_rcc_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -602,7 +604,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_gpio.o --omf_browse dollies_controller_board\stm32f1xx_hal_gpio.crf --depend dollies_controller_board\stm32f1xx_hal_gpio.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -634,7 +636,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_dma.o --omf_browse dollies_controller_board\stm32f1xx_hal_dma.crf --depend dollies_controller_board\stm32f1xx_hal_dma.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -666,7 +668,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_cortex.o --omf_browse dollies_controller_board\stm32f1xx_hal_cortex.crf --depend dollies_controller_board\stm32f1xx_hal_cortex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -698,7 +700,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_pwr.o --omf_browse dollies_controller_board\stm32f1xx_hal_pwr.crf --depend dollies_controller_board\stm32f1xx_hal_pwr.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -730,7 +732,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_flash.o --omf_browse dollies_controller_board\stm32f1xx_hal_flash.crf --depend dollies_controller_board\stm32f1xx_hal_flash.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -762,7 +764,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_flash_ex.o --omf_browse dollies_controller_board\stm32f1xx_hal_flash_ex.crf --depend dollies_controller_board\stm32f1xx_hal_flash_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -794,7 +796,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_exti.o --omf_browse dollies_controller_board\stm32f1xx_hal_exti.crf --depend dollies_controller_board\stm32f1xx_hal_exti.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -826,7 +828,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_spi.o --omf_browse dollies_controller_board\stm32f1xx_hal_spi.crf --depend dollies_controller_board\stm32f1xx_hal_spi.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -858,7 +860,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_tim.o --omf_browse dollies_controller_board\stm32f1xx_hal_tim.crf --depend dollies_controller_board\stm32f1xx_hal_tim.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -890,7 +892,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_tim_ex.o --omf_browse dollies_controller_board\stm32f1xx_hal_tim_ex.crf --depend dollies_controller_board\stm32f1xx_hal_tim_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -922,7 +924,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x5FBFB035)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\stm32f1xx_hal_uart.o --omf_browse dollies_controller_board\stm32f1xx_hal_uart.crf --depend dollies_controller_board\stm32f1xx_hal_uart.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -962,7 +964,7 @@ I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5FBFB020)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5FBFB020)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5FBFB035)
@@ -986,13 +988,13 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c)(0x5FBFB022)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usbd_core.o --omf_browse dollies_controller_board\usbd_core.crf --depend dollies_controller_board\usbd_core.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5FBFB022)
-I (../Inc/usbd_conf.h)(0x5FCCE2F1)
+I (../Inc/usbd_conf.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1028,13 +1030,13 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5FBFB022
 F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c)(0x5FBFB022)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usbd_ctlreq.o --omf_browse dollies_controller_board\usbd_ctlreq.crf --depend dollies_controller_board\usbd_ctlreq.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5FBFB022)
-I (../Inc/usbd_conf.h)(0x5FCCE2F1)
+I (../Inc/usbd_conf.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1069,13 +1071,13 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x5FBFB022)
 F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c)(0x5FBFB022)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\usbd_ioreq.o --omf_browse dollies_controller_board\usbd_ioreq.crf --depend dollies_controller_board\usbd_ioreq.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5FBFB022)
-I (../Inc/usbd_conf.h)(0x5FCCE2F1)
+I (../Inc/usbd_conf.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1111,13 +1113,13 @@ F (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x5FBFB022)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x5FBFB022)
-I (../Inc/usbd_conf.h)(0x5FCCE2F1)
+I (../Inc/usbd_conf.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB71C8)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1152,9 +1154,9 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x5FBFB022
 F (..\board_halyavino_lib\led_hardware_driver.c)(0x5FCC0829)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\led_hardware_driver.o --omf_browse dollies_controller_board\led_hardware_driver.crf --depend dollies_controller_board\led_hardware_driver.d)
 I (..\board_halyavino_lib\led_hardware_driver.h)(0x5FCC0829)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1186,9 +1188,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 I (..\board_halyavino_lib\status_led.h)(0x5FC7AAE2)
 F (..\board_halyavino_lib\status_led.c)(0x5FC7AA2D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\status_led.o --omf_browse dollies_controller_board\status_led.crf --depend dollies_controller_board\status_led.d)
 I (..\board_halyavino_lib\status_led.h)(0x5FC7AAE2)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1221,9 +1223,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (..\board_halyavino_lib\dac.c)(0x5FCC076C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\dac.o --omf_browse dollies_controller_board\dac.crf --depend dollies_controller_board\dac.d)
 I (..\board_halyavino_lib\dac.h)(0x5FCC077D)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1254,9 +1256,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (..\board_halyavino_lib\calling_timer_control.c)(0x5FCCE284)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\calling_timer_control.o --omf_browse dollies_controller_board\calling_timer_control.crf --depend dollies_controller_board\calling_timer_control.d)
 I (..\board_halyavino_lib\calling_timer_control.h)(0x5FCC0611)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1286,19 +1288,20 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
-F (..\system\led_file.c)(0x5FCCE42E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\led_file.o --omf_browse dollies_controller_board\led_file.crf --depend dollies_controller_board\led_file.d)
-I (..\system\led_file.h)(0x5FCAC34C)
+F (..\system\led_file.c)(0x5FCCF487)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\led_file.o --omf_browse dollies_controller_board\led_file.crf --depend dollies_controller_board\led_file.d)
+I (..\system\led_file.h)(0x5FCCEF6A)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
+I (..\system\file_status.h)(0x5FCCEF56)
 I (..\board_halyavino_lib\led_hardware_driver.h)(0x5FCC0829)
 I (..\system\small_file_reader.h)(0x5FCAAD2C)
 I (..\system\filesystem_status.h)(0x5FCC05D8)
-I (../Inc/fatfs.h)(0x5FCCE2F1)
+I (../Inc/fatfs.h)(0x5FCCEBCB)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x5FBFB022)
-I (../Inc/ffconf.h)(0x5FCCE2F1)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/ffconf.h)(0x5FCCEBCB)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1329,26 +1332,27 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x5FBFB022)
-I (../Inc/user_diskio.h)(0x5FCCE2F1)
+I (../Inc/user_diskio.h)(0x5FCCEBCB)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DB71C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
-F (..\system\led_channel_manager.c)(0x5FCABC6D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\led_channel_manager.o --omf_browse dollies_controller_board\led_channel_manager.crf --depend dollies_controller_board\led_channel_manager.d)
+F (..\system\led_channel_manager.c)(0x5FCCF4AB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\led_channel_manager.o --omf_browse dollies_controller_board\led_channel_manager.crf --depend dollies_controller_board\led_channel_manager.d)
 I (..\system\led_channel_manager.h)(0x5FCC07BA)
 I (..\board_halyavino_lib\led_hardware_driver.h)(0x5FCC0829)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (..\system\led_file.h)(0x5FCAC34C)
+I (..\system\led_file.h)(0x5FCCEF6A)
+I (..\system\file_status.h)(0x5FCCEF56)
 I (..\system\device_manager_status.h)(0x5FCC07C1)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 F (..\system\small_file_reader.c)(0x5FCC05EA)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\small_file_reader.o --omf_browse dollies_controller_board\small_file_reader.crf --depend dollies_controller_board\small_file_reader.d)
 I (..\system\small_file_reader.h)(0x5FCAAD2C)
 I (..\system\filesystem_status.h)(0x5FCC05D8)
-I (../Inc/fatfs.h)(0x5FCCE2F1)
+I (../Inc/fatfs.h)(0x5FCCEBCB)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x5FBFB022)
-I (../Inc/ffconf.h)(0x5FCCE2F1)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/ffconf.h)(0x5FCCEBCB)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1380,20 +1384,21 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x5FBFB022)
-I (../Inc/user_diskio.h)(0x5FCCE2F1)
+I (../Inc/user_diskio.h)(0x5FCCEBCB)
 F (..\system\global_device_manager.c)(0x5FCC0531)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\global_device_manager.o --omf_browse dollies_controller_board\global_device_manager.crf --depend dollies_controller_board\global_device_manager.d)
 I (..\system\global_device_manager.h)(0x5FCAAC18)
 I (..\system\led_channel_manager.h)(0x5FCC07BA)
 I (..\board_halyavino_lib\led_hardware_driver.h)(0x5FCC0829)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (..\system\led_file.h)(0x5FCAC34C)
+I (..\system\led_file.h)(0x5FCCEF6A)
+I (..\system\file_status.h)(0x5FCCEF56)
 I (..\system\device_manager_status.h)(0x5FCC07C1)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DB71C6)
 I (..\board_halyavino_lib\calling_timer_control.h)(0x5FCC0611)
 F (..\spi_flash\spi_flash.c)(0x5F019530)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\spi_flash.o --omf_browse dollies_controller_board\spi_flash.crf --depend dollies_controller_board\spi_flash.d)
 I (..\spi_flash\spi_flash.h)(0x5E441B31)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1423,17 +1428,17 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DB71C6)
 F (../Middlewares/Third_Party/FatFs/src/diskio.c)(0x5FBFB022)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\diskio.o --omf_browse dollies_controller_board\diskio.crf --depend dollies_controller_board\diskio.d)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5FBFB022)
-I (../Inc/ffconf.h)(0x5FCCE2F1)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/ffconf.h)(0x5FCCEBCB)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1466,10 +1471,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x5FBFB035)
 F (../Middlewares/Third_Party/FatFs/src/ff.c)(0x5FBFB022)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I..\board_halyavino_lib -I..\system -I..\spi_flash -I../Middlewares/Third_Party/FatFs/src-I D:\repositories\dollies\halyavino_board\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o dollies_controller_board\ff.o --omf_browse dollies_controller_board\ff.crf --depend dollies_controller_board\ff.d)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x5FBFB022)
-I (../Inc/ffconf.h)(0x5FCCE2F1)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/ffconf.h)(0x5FCCEBCB)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1506,10 +1511,10 @@ I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5FBFB022)
-I (../Inc/ffconf.h)(0x5FCCE2F1)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/ffconf.h)(0x5FCCEBCB)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)
@@ -1543,10 +1548,10 @@ F (../Middlewares/Third_Party/FatFs/src/option/syscall.c)(0x5FBFB022)(--c99 -c -
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FatFs/src/option/../ff.h)(0x5FBFB022)
 I (../Middlewares/Third_Party/FatFs/src/option/../integer.h)(0x5FBFB022)
-I (../Inc/ffconf.h)(0x5FCCE2F1)
-I (../Inc/main.h)(0x5FCCE2F2)
+I (../Inc/ffconf.h)(0x5FCCEBCB)
+I (../Inc/main.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FBFB035)
-I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCE2F2)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5FCCEBCC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5FBFB035)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5FBFB035)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5FBFB035)

@@ -4,6 +4,7 @@ dollies_controller_board\global_device_manager.o: ..\system\led_channel_manager.
 dollies_controller_board\global_device_manager.o: ..\board_halyavino_lib\led_hardware_driver.h
 dollies_controller_board\global_device_manager.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 dollies_controller_board\global_device_manager.o: ..\system\led_file.h
+dollies_controller_board\global_device_manager.o: ..\system\file_status.h
 dollies_controller_board\global_device_manager.o: ..\system\device_manager_status.h
 dollies_controller_board\global_device_manager.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 dollies_controller_board\global_device_manager.o: ..\board_halyavino_lib\calling_timer_control.h

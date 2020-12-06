@@ -1,6 +1,7 @@
 dollies_controller_board\led_file.o: ..\system\led_file.c
 dollies_controller_board\led_file.o: ..\system\led_file.h
 dollies_controller_board\led_file.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+dollies_controller_board\led_file.o: ..\system\file_status.h
 dollies_controller_board\led_file.o: ..\board_halyavino_lib\led_hardware_driver.h
 dollies_controller_board\led_file.o: ..\system\small_file_reader.h
 dollies_controller_board\led_file.o: ..\system\filesystem_status.h

@@ -49,4 +49,5 @@ dollies_controller_board\main.o: ..\system\global_device_manager.h
 dollies_controller_board\main.o: ..\system\led_channel_manager.h
 dollies_controller_board\main.o: ..\board_halyavino_lib\led_hardware_driver.h
 dollies_controller_board\main.o: ..\system\led_file.h
+dollies_controller_board\main.o: ..\system\file_status.h
 dollies_controller_board\main.o: ..\system\device_manager_status.h
