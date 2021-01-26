@@ -1,0 +1,60 @@
+#ifndef USB_PROTO_DEFINES_H
+#define USB_PROTO_DEFINES_H
+
+// common
+#define FULL_REPORT_LENGTH 64
+#define MAX_PACKET_LENGTH 63
+
+//-----------------------------------------------------
+//packet header
+//-----------------------------------------------------
+#define USB_PACKET_DIRECTION_IN_DEVICE 0x00
+#define USB_PACKET_DIRECTION_FROM_DEVICE 0x01
+
+#define USB_PACKET_COMMAND_TYPE_STATUS 0x00
+#define USB_PACKET_COMMAND_TYPE_FILE 0x02
+#define USB_PACKET_COMMAND_TYPE_DEVICE 0x04
+#define USB_PACKET_COMMAND_TYPE_RUN 0x06
+#define USB_PACKET_COMMAND_TYPE_ERROR 0x08
+
+#define USB_PACKET_TYPE_REQUEST 0x00
+#define USB_PACKET_TYPE_RESPONSE 0x10
+
+#define USB_PACKET_STATUS_OK 0x00
+#define USB_PACKET_STATUS_WAIT 0x20
+#define USB_PACKET_STATUS_ERROR 0x40
+
+#define USB_PACKET_DIRECTION_BIT_POSITION 0x01
+#define USB_PACKET_COMMAND_TYPE_POSITION 0x06
+#define USB_PACKET_TYPE_POSITION 0x10
+
+#define USB_PACKET_STATUS_POSITION 0x60
+
+//-------------------------------------------------------
+//device request
+//-------------------------------------------------------
+#define DEVICE_TYPE_POSITION 0x07
+
+#define DEVICE_TYPE_MEMORY 0x00
+#define DEVICE_TYPE_LED 0x01
+#define DEVICE_TYPE_SPEAKER 0x02
+#define DEVICE_TYPE_GPIO 0x03
+#define DEVICE_TYPE_SERVO 0x04
+#define DEVICE_TYPE_DIGITAL 0x05
+
+#define DEVICE_ADDRESS_POSITION 0xf0
+#define DEVICE_ADDRESS_SHIFT 4
+#define GET_DEVICE_ADDRESS(x) (x & DEVICE_ADDRESS_POSITION)>>DEVICE_ADDRESS_SHIFT
+
+#define FILE_SOURCE_POSITION 0x07
+#define FILE_SOURCE_MEMORY 0x00
+#define FILE_SOURCE_USB 0x01
+#define FILE_SOURCE_DIGITAL 0x02
+
+#define FILE_ACTION_POSITION 0x10
+#define FILE_ACTION_LOAD 0x00
+#define FILE_ACTION_REMOVE 0x10
+
+#define MAX_FILE_NAME_LENGTH MAX_PACKET_LENGTH - 4
+
+#endif

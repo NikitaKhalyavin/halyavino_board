@@ -71,7 +71,7 @@ static void ledChannelStartRecording(void* this)
 static void setHardwarePWM_Value(void * this, float timeFromBeginning)
 {
     LedChannelManager * manager = (LedChannelManager*) this;
-    if(manager->linkedFile->status == FILE_EMPTY)
+    if((manager->linkedFile->status == FILE_EMPTY) || (manager->linkedFile->status == FILE_ENDED))
     {
         manager->endRecording(this);
     }

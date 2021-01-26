@@ -26,6 +26,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <global_device_manager.h>
+#include <fatfs.h>
+#include <event_queue.h>
+#include <usb_bridge.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -35,6 +38,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define EVENT_QUEUE_LENGTH 20
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -52,7 +56,12 @@ TIM_HandleTypeDef htim4;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
+EventMessage eventBuf[EVENT_QUEUE_LENGTH];
+EventQueue eventQueue;
+UsbBridge usbBridge;
+FATFS fs;
 
+EventMessage queue[20];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -64,7 +73,7 @@ static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
+static void initFatFS(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -111,6 +120,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   
   initAllDevices();
+  initFatFS();
+  usbBridgeInit(&usbBridge);
+  eventQueueInit(&eventQueue, 20, queue);
   //HAL_TIM_Base_Start_IT(&htim1);
   /* USER CODE END 2 */
  
@@ -120,15 +132,19 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    setLedFile(LED_CHANNEL_1, "dummy file");
-    setLedFile(LED_CHANNEL_2, "dummy file");
-    setLedFile(LED_CHANNEL_3, "dummy file");
-    setLedFile(LED_CHANNEL_4, "dummy file");
-    setLedFile(LED_CHANNEL_5, "dummy file");
-    setLedFile(LED_CHANNEL_6, "dummy file");
-    startAll(HAL_GetTick());
-    HAL_Delay(10000);
-
+//    setLedFile(LED_CHANNEL_1, "dummy file");
+//    setLedFile(LED_CHANNEL_2, "dummy file");
+//    setLedFile(LED_CHANNEL_3, "dummy file");
+//    setLedFile(LED_CHANNEL_4, "dummy file");
+//    setLedFile(LED_CHANNEL_5, "dummy file");
+//    setLedFile(LED_CHANNEL_6, "dummy file");
+//    startAll(HAL_GetTick());
+//    HAL_Delay(10000);
+      
+      EventMessage mes;
+      DequeueResult res = eventQueue.tryToDecue(&eventQueue, &mes);
+      if(res == DEQUEUE_RESULT_SUCCESS)
+          mes.handlerReference(mes.eventParams);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -515,7 +531,40 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+static void initFatFS()
+{
+    FRESULT res;
 
+    // mount the default drive
+    res = f_mount(&fs, "", 0);
+    if(res != FR_OK) 
+    {
+       return;
+    }
+
+    uint32_t freeClust;
+    FATFS* fs_ptr = &fs;
+    // Warning! This fills fs.n_fatent and fs.csize!
+    res = f_getfree("", &freeClust, &fs_ptr);
+    if(res != FR_OK) {
+         //try to create filesystem
+        res = f_mkfs("", 0, 512);
+        if(res != FR_OK)
+            return;
+        res = f_getfree("", &freeClust, &fs_ptr);
+        if(res != FR_OK)
+            return;
+    }
+
+    uint32_t totalBlocks = (fs.n_fatent - 2) * fs.csize;
+    uint32_t freeBlocks = freeClust * fs.csize;
+
+    DIR dir;
+    res = f_opendir(&dir, "/");
+    if(res != FR_OK) {
+        return;
+    }
+}
 /* USER CODE END 4 */
 
 /**

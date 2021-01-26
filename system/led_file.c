@@ -1,9 +1,9 @@
 #include "led_file.h"
 #include "led_hardware_driver.h"
-#include "small_file_reader.h"
 
 #include <stdbool.h>
 #include <stdlib.h>
+#include <math.h>
 
 static bool isLedFileHeaderCorrect(uint8_t* file);
 
@@ -13,112 +13,115 @@ static void readFileFunction (void * this, const char * fileName)
     //it will be rewrite if no errors occured
     descriptor->status = FILE_ERROR;
     
-    uint8_t readBuff[512] = {170, 187, 204, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63,
-0, 0, 128, 63, 154, 153, 153, 63, 0, 0, 0, 0, 0, 0, 160, 64,
-0, 0, 0, 63, 0, 0, 32, 65, 0, 0, 0, 0};
-    unsigned int bytesRead = 44;
+    const uint32_t LED_FILE_BUFFER_SIZE = 64;
+    StreamBufferInitializingResult bufferRes = streamFileBufferInit(&(descriptor->buffer), 
+                LED_FILE_BUFFER_SIZE, FILE_DEVICE_MEMORY, fileName);
+    if(bufferRes != STREAM_BUFFER_INITIALIZING_OK)
+        return;
     
-//    FileSystemResultMessage res = readSmallFileToBuffer(readBuff, &bytesRead, fileName);     
-//    if(res != FILE_SUCCESS)
-//    {
-//        //to do: error handle
-//        return;
-//    }        
-    if(!isLedFileHeaderCorrect(readBuff))
+    /*
+    * led file header structure:
+    * bytes 0-2: 'l', 'e', 'd'
+    * byte 3: number of data points
+    * other data: points in format:
+    * 4 bytes - float time
+    * 4 bytes - float value
+    */
+    
+    //read the header and first point
+    const uint32_t initializingReadingSize = 3 + 1 + 8; 
+    uint8_t readBuff[initializingReadingSize];
+    
+    StreamBufferReadingResult res = descriptor->buffer.read((void*)(&(descriptor->buffer)), readBuff, initializingReadingSize);
+    if(res != STREAM_BUFFER_READING_SUCCESS)
     {
-        //error: incorrect file format
         return;
     }
-    descriptor->pointNumber = (uint8_t)(readBuff[3]);
     
-    void* pointArray = malloc(descriptor->pointNumber * sizeof(LedFilePoint));
-    descriptor->pointArray = (LedFilePoint*)pointArray;
+    if(!isLedFileHeaderCorrect(readBuff))
+    {
+        return;
+    }
+
+    descriptor->pointNumber = (uint8_t)(readBuff[3]);
     
     //defined by the file format
     const unsigned int indexOfDataStart = 4;
     
-    for(int i = 0; i < descriptor->pointNumber; i++)
-    {
-        const unsigned int numberOfBytesInFloat = sizeof(float);
-        const unsigned int numberOfBytesInOnePointDescription = numberOfBytesInFloat*2;
-        uint8_t bytesOfTime[numberOfBytesInFloat];
-        for(int byteNumber = 0; byteNumber < numberOfBytesInFloat; byteNumber++)
-        {
-            unsigned int cursor = indexOfDataStart + i*numberOfBytesInOnePointDescription + byteNumber;
-            if (cursor >= bytesRead)
-            {
-                //error: value is not fully readed yet, but the file is ended already
-                return;
-            }
-            bytesOfTime[byteNumber] = readBuff[cursor];
-        }
-        LedFilePoint point;
-        point.timeInSeconds = *(float*)bytesOfTime;
-        uint8_t bytesOfValue[numberOfBytesInFloat];
-        for(int byteNumber = 0; byteNumber < numberOfBytesInFloat; byteNumber++)
-        {
-            unsigned int cursor = indexOfDataStart + i*numberOfBytesInOnePointDescription + numberOfBytesInFloat + byteNumber;
-            if (cursor >= bytesRead)
-            {
-                //error: value is not fully readed yet, but the file is ended already
-                return;
-            }
-            bytesOfValue[byteNumber] = readBuff[cursor];
-        }
-        point.value = *(float*)bytesOfValue;
-        descriptor->pointArray[i] = point;
-    }
+    const unsigned int numberOfBytesInFloat = 4;
+    
+    LedFilePoint point;
+    point.timeInSeconds = *(float*)(&readBuff[indexOfDataStart]);
+    point.value = *(float*)(&readBuff[indexOfDataStart + numberOfBytesInFloat]);
+    descriptor->nextPoint = point;
+    
+    LedFilePoint dummyPoint;
+    dummyPoint.timeInSeconds = NAN;
+    dummyPoint.value = NAN;
+    descriptor->currentPoint = dummyPoint;
+    descriptor->currentPointIndex = -1;
     
     descriptor->status = FILE_RECORDING;
 }
 
+void goToNextPointFunction (void* this)
+{
+    LedFileDescriptor * descriptor = (LedFileDescriptor*)this;
+    
+    const unsigned int numberOfBytesInFloat = 4;
+    const unsigned int numberOfBytesInOnePointDescription = numberOfBytesInFloat*2;
+    
+    uint8_t readBuff[numberOfBytesInOnePointDescription];
+    StreamBufferReadingResult res = descriptor->buffer.read((void*)(&(descriptor->buffer)), 
+                            readBuff, numberOfBytesInOnePointDescription);
+    if(res != STREAM_BUFFER_READING_SUCCESS)
+    {
+        descriptor->status = FILE_ERROR;
+        return;
+    }
+    LedFilePoint point;
+    point.timeInSeconds = *(float*)readBuff;
+    point.value = *(float*)(&readBuff[numberOfBytesInFloat]);
+    descriptor->currentPoint = descriptor->nextPoint;
+    descriptor->nextPoint = point;
+    descriptor->currentPointIndex++;
+}
 
 static uint32_t getChannelValueFunction(void * this, float currentTimeInSeconds)
 {
+    
     LedFileDescriptor * descriptor = (LedFileDescriptor*)this;
-    if(currentTimeInSeconds <= descriptor->pointArray[0].timeInSeconds)
-    {
-        //this is start of file - value is zero
-        return 0;
-    }
     
-    if(currentTimeInSeconds >= descriptor->pointArray[descriptor->pointNumber - 1].timeInSeconds)
-    {
-        //this is end of file - value is zero
-        descriptor->status = FILE_ENDED;
+    if(descriptor->status != FILE_RECORDING)
         return 0;
-    }
     
-    //if this moment is between start and end - calculate value between neightboor points
-    LedFilePoint lastPoint;
-    LedFilePoint nextPoint;
-    for(int i = 1; i < descriptor->pointNumber; i++)
+    if(currentTimeInSeconds > descriptor->nextPoint.timeInSeconds)
     {
-        if(descriptor->pointArray[i].timeInSeconds >= currentTimeInSeconds)
+        if(descriptor->currentPointIndex < descriptor->pointNumber - 2)
+            descriptor->goNext(this);
+        else
         {
-            nextPoint = descriptor->pointArray[i];
-            lastPoint = descriptor->pointArray[i-1];
-            break;
-        }            
+            descriptor->status = FILE_ENDED;
+            return 0;
+        }
     }
     
     //linear interpolating of the value between two points 
-    float timeSinceLast = currentTimeInSeconds - lastPoint.timeInSeconds;
-    float fullTimeRangeLength = nextPoint.timeInSeconds - lastPoint.timeInSeconds;
-    float startValue = lastPoint.value;
-    float endValue = nextPoint.value;
+    float timeSinceLast = currentTimeInSeconds - descriptor->currentPoint.timeInSeconds;
+    float fullTimeRangeLength = descriptor->nextPoint.timeInSeconds - descriptor->currentPoint.timeInSeconds;
+    float startValue = descriptor->currentPoint.value;
+    float endValue = descriptor->nextPoint.value;
     float deltaValue = endValue - startValue;
     float newValue = startValue + (deltaValue * timeSinceLast / fullTimeRangeLength);
-    uint32_t resultValue = (uint32_t)(newValue * TIMER_COUNTER_MAX_VALUE);
     
+    uint32_t resultValue = (uint32_t)(newValue * TIMER_COUNTER_MAX_VALUE);
     return resultValue;
 }
 
 static void closeFileFunction(void * this)
 {
     LedFileDescriptor * descriptor = (LedFileDescriptor *) this;
-    void * dataArray = (void*) descriptor->pointArray;
-    free(dataArray);
+    deleteBuffer(&(descriptor->buffer));
     descriptor->status = FILE_EMPTY;
 }
     
@@ -128,8 +131,9 @@ void ledFileDescriptorInit(LedFileDescriptor * descriptor)
     descriptor->getChannelValue = getChannelValueFunction;
     descriptor->close = closeFileFunction;
     descriptor->pointNumber = 0;
-    descriptor->pointArray = NULL;
+    descriptor->currentPointIndex = 0;
     descriptor->status = FILE_EMPTY;
+    descriptor->goNext = goToNextPointFunction;
 }
 
 

@@ -1,0 +1,6 @@
+#ifndef FILE_STORAGE_DEVICE_H
+#define FILE_STORAGE_DEVICE_H
+
+typedef enum {FILE_DEVICE_MEMORY, FILE_DEVICE_USB, FILE_DEVICE_DIGITAL} FileStorageDevice;
+
+#endif
