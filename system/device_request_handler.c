@@ -152,6 +152,29 @@ void handleDeviceRequest(uint8_t* request)
         }
     }
     
+    if((deviceDescriptor & DEVICE_TYPE_POSITION) == DEVICE_TYPE_SPEAKER)
+    {
+        uint8_t deviceAddress = GET_DEVICE_ADDRESS(deviceDescriptor);
+        if(deviceAddress != 0)
+            //error: it maust be impossible
+            return;
+        
+        if((fileDescriptor & FILE_ACTION_POSITION) == FILE_ACTION_LOAD)
+        {
+            if((fileDescriptor & FILE_SOURCE_POSITION) == FILE_SOURCE_MEMORY)
+            {                   
+                setWavFile(fileName);
+                return;
+            }
+            //TO-DO: all other
+        }
+        else
+        {
+            //it must be impossible
+            return;
+        }
+    }
+    
     //TO_DO: all other
         
 }

@@ -2,6 +2,8 @@
 #include "main.h"
 
 static GPIO_PinState getState(uint8_t maskedValue);
+extern TIM_HandleTypeDef htim2;
+
 
 void setDacValue(uint8_t value)
 {
@@ -20,11 +22,26 @@ void setDacValue(uint8_t value)
 void disableSpeaker()
 {
     HAL_GPIO_WritePin(SPEAKER_SHUTDOWN_GPIO_Port, SPEAKER_SHUTDOWN_Pin, GPIO_PIN_RESET);
+    HAL_TIM_Base_Stop_IT(&htim2);
 }
 
 void enableSpeaker()
 {
     HAL_GPIO_WritePin(SPEAKER_SHUTDOWN_GPIO_Port, SPEAKER_SHUTDOWN_Pin, GPIO_PIN_SET);    
+    HAL_TIM_Base_Start_IT(&htim2);
+}
+
+
+void setTimerSampleRate(uint32_t sampleRate)
+{
+    uint32_t maxFrequency = 48000000 / (htim2.Init.Prescaler + 1);
+    uint32_t requiredPeriod = maxFrequency / sampleRate;
+    
+    htim2.Init.Period = requiredPeriod;
+    if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+    {
+        Error_Handler();
+    }
 }
 
 static GPIO_PinState getState(uint8_t maskedValue)

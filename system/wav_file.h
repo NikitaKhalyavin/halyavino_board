@@ -3,45 +3,38 @@
 
 #include "stdint.h"
 #include "file_status.h"
+#include "stream_file_buffer.h"
 
+typedef enum {PCM} FormatType;
 
 typedef void(*ReadFileFunction)(void * this, const char * fileName);
-typedef uint8_t(*GetChannelValueFunction)(void * this);
+typedef uint32_t(*GetChannelValueFunction)(void * this, float currentTimeInSeconds);
 typedef void(*CloseFileFunction)(void * this);
-
-    
-typedef struct 
-{
-    //to-do with the wav specification
-    //for internal using only
-    //it's okay to avoid unnecessary data saving
-}WavFileHeader;    
     
 typedef struct
 {
+    FormatType format;
+    uint32_t channelNumber;
+    uint32_t sampleRate;
+    uint32_t bitsPerSample;
+    uint32_t bytesPerFrame;
+    
     FileStatus status;
+    int32_t numberOfSamples;
+    int32_t currentSampleIndex;
     
-    //read file from spi and parse it.s header. 
-    //file has to be written in the pair of short buffers, which change
-    //each other during getting empty and load data asynchronous
-    //header of file is also reading and checking here
     ReadFileFunction readFile;
-    
-    //get the next value from file. If it has more than 1 channel, values have to be mixed
-    //output format must be controlled also
     GetChannelValueFunction getChannelValue;
-    
-    //delete paired buffers and other objects if necessary
     CloseFileFunction close;
     
     //private section
     //please, don't use this fields
-    WavFileHeader header;
-    PairedStreamBuf * buffer;
+    StreamFileBuffer buffer;
+    uint8_t* tempBuffer;
     
     
-} LedFileDescriptor;
+} WavFileDescriptor;
 
-void ledFileDescriptorInit(LedFileDescriptor * descriptor);
+void wavFileDescriptorInit(WavFileDescriptor * descriptor);
 
 #endif

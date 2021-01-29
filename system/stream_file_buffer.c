@@ -131,6 +131,7 @@ void bufferLowDataCallback(void* this)
         FRESULT res;
         uint32_t readedBytes;
         if(firstPartSize != 0)
+        {
             res = f_read(&(buffer->linkedObject.file), firstPartPointer, 
                 firstPartSize, &readedBytes);
             if(res != FR_OK)
@@ -142,7 +143,9 @@ void bufferLowDataCallback(void* this)
                 buffer->isFileEnded = true;
                 return;
             }
+        }
         if(secondPartSize != 0)
+        {
             res = f_read(&(buffer->linkedObject.file), secondPartPointer, 
                 secondPartSize, &readedBytes);
             if(res != FR_OK)
@@ -154,6 +157,7 @@ void bufferLowDataCallback(void* this)
                 buffer->isFileEnded = true;
                 return;
             }
+        }
             
     }
 }

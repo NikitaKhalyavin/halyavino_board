@@ -1,9 +1,11 @@
-#include "led_channel_manager.h"
+#include "sound_manager.h"
+
+#include <dac.h>
 #include <stdlib.h>
 
 static void linkFile(void * this, const char* fileName)
 {
-    LedChannelManager * manager = (LedChannelManager*) this;
+    WavChannelManager * manager = (WavChannelManager*) this;
     
     if(manager->status != DEVICE_STATUS_FREE)
     {
@@ -11,16 +13,16 @@ static void linkFile(void * this, const char* fileName)
         return;
     }
     
-    void* filePointer = malloc(sizeof(LedFileDescriptor));
+    void* filePointer = malloc(sizeof(WavFileDescriptor));
     if(filePointer == NULL)
     {
         //end of memory
         manager->status = DEVICE_STATUS_ERROR;
         return;
     }
-    manager->linkedFile = (LedFileDescriptor*)filePointer;
+    manager->linkedFile = (WavFileDescriptor*)filePointer;
     
-    ledFileDescriptorInit(manager->linkedFile);
+    wavFileDescriptorInit(manager->linkedFile);
     
     //TO_DO: error message processing
     manager->linkedFile->readFile(manager->linkedFile, fileName);
@@ -28,6 +30,7 @@ static void linkFile(void * this, const char* fileName)
     {
         //success
         manager->status = DEVICE_STATUS_WAIT;
+        setTimerSampleRate(manager->linkedFile->sampleRate);
         return;
     }
     else
@@ -37,23 +40,27 @@ static void linkFile(void * this, const char* fileName)
     
 }
 
-static void ledChannelEndRecording(void* this)
+static void wavChannelEndRecording(void* this)
 {
-    LedChannelManager * manager = (LedChannelManager*) this;
-    manager->linkedFile->close((void*)(manager->linkedFile));
-    free(manager->linkedFile);    
-    ledHardwareDeinit(manager->channel);
+    disableSpeaker();
+    WavChannelManager * manager = (WavChannelManager*) this;
+    if(manager->linkedFile != NULL)
+    {
+        manager->linkedFile->close((void*)(manager->linkedFile));
+        free(manager->linkedFile);
+        manager->linkedFile = NULL;
+    }        
     manager->status = DEVICE_STATUS_FREE;
 }
 
-static void ledChannelStartRecording(void* this)
+static void wavChannelStartRecording(void* this)
 {
-    LedChannelManager * manager = (LedChannelManager*) this;
+    WavChannelManager * manager = (WavChannelManager*) this;
     
     if(manager->status != DEVICE_STATUS_WAIT)
         // device is already running or not prepared
         return;
-        
+    
     if(manager->linkedFile == NULL)
     {
         // no file linked
@@ -68,28 +75,30 @@ static void ledChannelStartRecording(void* this)
         return;
     }
 
-    ledHardwareInit(manager->channel);
+    enableSpeaker();
     manager->status = DEVICE_STATUS_RECORDING;
 }
 
 
-static void setHardwarePWM_Value(void * this, float timeFromBeginning)
+static void setHardwareSoundValue(void * this)
 {
-    LedChannelManager * manager = (LedChannelManager*) this;
+    WavChannelManager * manager = (WavChannelManager*) this;
     if((manager->linkedFile->status == FILE_EMPTY) || (manager->linkedFile->status == FILE_ENDED))
     {
         manager->endRecording(this);
+        return;
     }
-    uint32_t channelValue = manager->linkedFile->getChannelValue((void*)(manager->linkedFile), timeFromBeginning);
-    setChannelPWM_Value(manager->channel, channelValue);    
+    uint32_t channelValue = manager->linkedFile->getChannelValue((void*)(manager->linkedFile), 0);
+    setDacValue(channelValue);    
 }
 
-void ledChannelManagerInit(LedChannelManager* this)
+void wavChannelManagerInit(WavChannelManager* this)
 {
     this->linkFile = linkFile;
-    this->startRecording = ledChannelStartRecording;
-    this->endRecording = ledChannelEndRecording;
-    this->setValue = setHardwarePWM_Value;
+    this->startRecording = wavChannelStartRecording;
+    this->endRecording = wavChannelEndRecording;
+    this->setValue = setHardwareSoundValue;
     this->linkedFile = NULL;
     this->status = DEVICE_STATUS_FREE;
+    disableSpeaker();
 }

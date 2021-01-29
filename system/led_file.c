@@ -21,7 +21,7 @@ static void readFileFunction (void * this, const char * fileName)
     
     /*
     * led file header structure:
-    * bytes 0-2: 'l', 'e', 'd'
+    * bytes 0-2: '0xAA', '0xBB', '0xCC'
     * byte 3: number of data points
     * other data: points in format:
     * 4 bytes - float time
