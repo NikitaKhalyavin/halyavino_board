@@ -43,7 +43,7 @@ static void setFileName(void* this, char* fileName)
 }
 
 
-static bool getGPIO_ButtonValue(void* this)
+static GPIO_ButtonState getGPIO_ButtonValue(void* this)
 {
     GPIO_Manager* manager = (GPIO_Manager*)this;
     if(manager->mode != GPIO_MODE_BUTTON)
@@ -59,6 +59,7 @@ static bool getGPIO_ButtonValue(void* this)
             manager->modeSpecified.button.currentState = GPIO_BUTTON_PRESSED;
             manager->modeSpecified.button.isReadyForNextChange = false;
             manager->modeSpecified.button.lastChangeTime = HAL_GetTick();
+            manager->modeSpecified.button.isClickAlreadySended = false;
         }
         if ((currentState == GPIO_PIN_SET) && (manager->modeSpecified.button.currentState == GPIO_BUTTON_PRESSED))
         {
@@ -74,7 +75,17 @@ static bool getGPIO_ButtonValue(void* this)
             manager->modeSpecified.button.isReadyForNextChange = true;
     }
     
-    return (manager->modeSpecified.button.currentState == GPIO_BUTTON_PRESSED);
+    if( (manager->modeSpecified.button.isClickAlreadySended == false) 
+        && (manager->modeSpecified.button.currentState == GPIO_BUTTON_PRESSED) )
+    {
+        
+        manager->modeSpecified.button.isClickAlreadySended = true;
+        return GPIO_BUTTON_PRESSED;
+    }
+    else
+    {
+        return GPIO_BUTTON_RELAXED;
+    }
 }
 
 static void servoTimerOnCallback(void* this)

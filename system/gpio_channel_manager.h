@@ -11,7 +11,7 @@ typedef enum {GPIO_MODE_BUTTON, GPIO_MODE_SERVO, GPIO_MODE_OFF} GPIO_Mode;
 
 // button types
 typedef enum {GPIO_BUTTON_PRESSED, GPIO_BUTTON_RELAXED} GPIO_ButtonState;
-typedef bool (*GetGPIO_ButtonValue)(void* this);
+typedef GPIO_ButtonState (*GetGPIO_ButtonValue)(void* this);
 typedef void (*SetFileName)(void* this, char* fileName);
 
 typedef struct
@@ -24,6 +24,7 @@ typedef struct
     // private value
     uint32_t lastChangeTime;
     bool isReadyForNextChange;
+    bool isClickAlreadySended;
 } GPIO_ButtonDescriptor;
 
 

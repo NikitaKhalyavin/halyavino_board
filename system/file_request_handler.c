@@ -218,7 +218,7 @@ void handleNewRequest(uint8_t* packet)
                 int bytesToRead = 58;
                 if(cursor - readedBytesNumber < bytesToRead)
                     bytesToRead = cursor - readedBytesNumber;
-                memcpy(&responseBuffer[14], &resultString[readedBytesNumber], bytesToRead);
+                memcpy(&responseBuffer[6], &resultString[readedBytesNumber], bytesToRead);
             }
             
             //send requested packet

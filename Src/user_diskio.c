@@ -37,6 +37,7 @@
 #include <string.h>
 #include "ff_gen_drv.h"
 #include <spi_flash.h>
+#include <status_led.h>
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/

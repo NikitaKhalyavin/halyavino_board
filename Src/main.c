@@ -29,6 +29,7 @@
 #include <fatfs.h>
 #include <event_queue.h>
 #include <usb_bridge.h>
+#include <status_led.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -563,7 +564,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = GPIO1_Pin|GPIO2_Pin|GPIO3_Pin|GPIO4_Pin 
                           |GPIO5_Pin|GPIO6_Pin|GPIO7_Pin|GPIO8_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : DAC_PIN2_Pin SPI2_NSS_Pin DAC_PIN3_Pin DAC_PIN4_Pin 
@@ -600,14 +601,24 @@ static void initFatFS()
     FATFS* fs_ptr = &fs;
     // Warning! This fills fs.n_fatent and fs.csize!
     res = f_getfree("", &freeClust, &fs_ptr);
+    
+    if(res == FR_NOT_READY)
+    {
+        HAL_Delay(500);
+    }
+    
     if(res != FR_OK) {
          //try to create filesystem
         res = f_mkfs("", 0, 512);
         if(res != FR_OK)
+        {
             return;
+        }
         res = f_getfree("", &freeClust, &fs_ptr);
         if(res != FR_OK)
+        {
             return;
+        }
     }
 
     uint32_t totalBlocks = (fs.n_fatent - 2) * fs.csize;
@@ -629,7 +640,13 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
-
+    while(true)
+    {
+        setStatusLedOn();
+        HAL_Delay(500);
+        setStatusLedOff();
+        HAL_Delay(500);
+    }
   /* USER CODE END Error_Handler_Debug */
 }
 

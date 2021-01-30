@@ -90,8 +90,8 @@ static void parseFile(char* file, uint32_t size)
             {
                 if(symbol == '\n')
                 {
-                    state = SCRIPT_PARSER_READING_FILE_NAME;
-                    deviceName[deviceNameIndex++] = '\0';
+                    state = SCRIPT_PARSER_READING_DEVICE_NAME;
+                    fileName[fileNameIndex++] = '\0';
                     deviceNameIndex = 0;
                     applyCommand(deviceName, fileName);
                 }
@@ -99,6 +99,11 @@ static void parseFile(char* file, uint32_t size)
                 break;
             }
         }
+    }
+    if(state == SCRIPT_PARSER_READING_FILE_NAME)
+    {
+        fileName[fileNameIndex++] = '\0';
+        applyCommand(deviceName, fileName);
     }
     startAll(HAL_GetTick());
 }
@@ -128,6 +133,6 @@ void executeScriptFile(char* fileName)
         return;
     
     parseFile(readBuffer, readed);
-    
+    f_close(&file);
 }
 
