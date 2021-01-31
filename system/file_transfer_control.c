@@ -125,7 +125,7 @@ void startFileTransfer(void* this, char* fileName, FileStorageDevice source, Fil
                 
                 FILINFO fil;
                 res = f_stat(dirName, &fil);
-                if(res == FR_NO_PATH)
+                if((res == FR_NO_PATH) || (res == FR_NO_FILE))
                 {     
                     res = f_mkdir(dirName);
                     if(res != FR_OK)

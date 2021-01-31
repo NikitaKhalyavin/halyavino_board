@@ -91,6 +91,7 @@ static uint32_t getChannelValueFunction(void * this, float currentTimeInSeconds)
     
     StreamBufferReadingResult res = descriptor->buffer.read((void*)(&(descriptor->buffer)), 
                 descriptor->tempBuffer, descriptor->bytesPerFrame);
+    
     if(res != STREAM_BUFFER_READING_SUCCESS)
     {
         descriptor->status = FILE_ERROR;
@@ -126,7 +127,7 @@ static uint32_t getChannelValueFunction(void * this, float currentTimeInSeconds)
             //get scale (256 - max value of ADC)
             uint32_t returnValue = channelSum * 256 / (descriptor->channelNumber * (1 << descriptor->bitsPerSample));
             if(returnValue > 255)
-                return 0;
+                return 255;
             return returnValue;
         }
         

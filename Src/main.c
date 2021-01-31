@@ -108,7 +108,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  HAL_Delay(100);
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -124,9 +124,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
   
   initAllDevices();
-  initFatFS();
-  usbBridgeInit(&usbBridge);
   eventQueueInit(&eventQueue, 20, queue);
+  usbBridgeInit(&usbBridge);
+  initFatFS();
+  
   configButton(GPIO_CHANNEL_1, "system\\script.txt");
   /* USER CODE END 2 */
  
@@ -140,7 +141,6 @@ int main(void)
       DequeueResult res = eventQueue.tryToDecue(&eventQueue, &mes);
       if(res == DEQUEUE_RESULT_SUCCESS)
           mes.handlerReference(mes.eventParams);
-      
       checkButtonsState();
     /* USER CODE END WHILE */
 
@@ -226,7 +226,7 @@ static void MX_SPI2_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN SPI2_Init 2 */
-
+  HAL_GPIO_WritePin(GPIOB, SPI2_NSS_Pin, GPIO_PIN_SET);
   /* USER CODE END SPI2_Init 2 */
 
 }
@@ -589,7 +589,6 @@ static void MX_GPIO_Init(void)
 static void initFatFS()
 {
     FRESULT res;
-
     // mount the default drive
     res = f_mount(&fs, "", 0);
     if(res != FR_OK) 
@@ -604,7 +603,7 @@ static void initFatFS()
     
     if(res == FR_NOT_READY)
     {
-        HAL_Delay(500);
+
     }
     
     if(res != FR_OK) {

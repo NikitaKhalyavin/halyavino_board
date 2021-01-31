@@ -22,6 +22,7 @@ typedef struct
         FIL file;
     } linkedObject;
     bool isFileEnded;
+    bool isNewPacketRequested;
     
     StreamBufferStatus status;
     FileStorageDevice source;

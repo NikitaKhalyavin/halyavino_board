@@ -14,6 +14,7 @@ StreamBufferInitializingResult streamFileBufferInit(StreamFileBuffer* buffer, ui
     buffer->dataSize = 0;
     buffer->source = device;
     buffer->isFileEnded = false;
+    buffer->isNewPacketRequested = false;
     buffer->read = readDataFromBuffer;
         
     buffer->dataBuffer = malloc(size * sizeof(uint8_t));
@@ -85,7 +86,8 @@ StreamBufferReadingResult readDataFromBuffer(void* this, uint8_t* dest, uint32_t
     
     buffer->dataSize -= size;
     
-    if(buffer->dataSize < buffer->size / 2)
+    if( (buffer->dataSize < buffer->size / 2) && 
+            (!buffer->isNewPacketRequested) )
     {
         if(!buffer->isFileEnded)
         {
@@ -96,6 +98,7 @@ StreamBufferReadingResult readDataFromBuffer(void* this, uint8_t* dest, uint32_t
             if(enqueueRes == ENQUEUE_RESULT_FULL)
             {
                 //buffer will try this next time
+                buffer->isNewPacketRequested = true;
                 return STREAM_BUFFER_READING_SUCCESS;
             }
         }
@@ -108,6 +111,7 @@ void bufferLowDataCallback(void* this)
 {
     
     StreamFileBuffer* buffer = (StreamFileBuffer*) this;
+    buffer->isNewPacketRequested = false;
     
     if(buffer->isFileEnded)
         //nothing to read
@@ -117,13 +121,18 @@ void bufferLowDataCallback(void* this)
     if(canRead <= 0)
         return;
     
+    uint32_t endIndex = buffer->startIndex + buffer->dataSize;
+    if(endIndex > buffer->size)
+    {
+        endIndex -= buffer->size;
+    }
     
-    int32_t firstPartSize = buffer->size - buffer->startIndex - buffer->dataSize;
-    if(firstPartSize < 0)
-        firstPartSize = 0;
-    uint8_t* firstPartPointer = &(buffer->dataBuffer[buffer->startIndex + buffer->dataSize]);
+    int32_t firstPartSize = buffer->size - endIndex;
+    if(firstPartSize > canRead)
+        firstPartSize = canRead;
+    uint8_t* firstPartPointer = &(buffer->dataBuffer[endIndex]);
     
-    int32_t secondPartSize = buffer->startIndex;
+    int32_t secondPartSize =  canRead - firstPartSize;
     uint8_t* secondPartPointer = buffer->dataBuffer;
     
     if(buffer->source == FILE_DEVICE_MEMORY)

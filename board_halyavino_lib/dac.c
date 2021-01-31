@@ -23,6 +23,7 @@ void disableSpeaker()
 {
     HAL_GPIO_WritePin(SPEAKER_SHUTDOWN_GPIO_Port, SPEAKER_SHUTDOWN_Pin, GPIO_PIN_RESET);
     HAL_TIM_Base_Stop_IT(&htim2);
+    setDacValue(0);
 }
 
 void enableSpeaker()
