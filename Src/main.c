@@ -17,19 +17,22 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
-
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "fatfs.h"
-#include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <global_device_manager.h>
-#include <fatfs.h>
-#include <event_queue.h>
-#include <usb_bridge.h>
-#include <status_led.h>
+#include "flash_disk_access_wrapper.h"
+
+#include "fs_api.h"
+#include "task_usb.h"
+#include "device_api.h"
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "semphr.h"
+#include "queue.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -39,7 +42,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define EVENT_QUEUE_LENGTH 20
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -58,12 +60,7 @@ TIM_HandleTypeDef htim4;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
-EventMessage eventBuf[EVENT_QUEUE_LENGTH];
-EventQueue eventQueue;
-UsbBridge usbBridge;
-FATFS fs;
 
-EventMessage queue[20];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -76,7 +73,7 @@ static void MX_TIM4_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
-static void initFatFS(void);
+void initUSB_Clock(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -93,7 +90,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-  
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -108,7 +104,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  HAL_Delay(100);
+  //HAL_Delay(100);
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -118,30 +114,31 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_USART3_UART_Init();
-  MX_USB_DEVICE_Init();
-  MX_FATFS_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+	initUSB_Clock();
+	
+	flashDiskAccessWrapperInit(flashDiskWrapperLocate());
+  initTaskFS();
+  initTaskUSB();
+  initTaskDevice();
+  //initFatFS();
   
-  initAllDevices();
-  eventQueueInit(&eventQueue, 20, queue);
-  usbBridgeInit(&usbBridge);
-  initFatFS();
-  
-  configButton(GPIO_CHANNEL_1, "system\\script.txt");
   /* USER CODE END 2 */
- 
- 
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	__disable_irq();
+	HAL_TIM_Base_Start_IT(&htim1);
+	HAL_TIM_OC_Start_IT(&htim1, TIM_CHANNEL_3);	
+	//dummy, will never occur
+	
+  HAL_GPIO_WritePin(GPIOA, USB_DP_PULLUP_Pin|DAC_PIN1_Pin, GPIO_PIN_SET);
+	HAL_TIM_Base_Start_IT(&htim3);
+	vTaskStartScheduler();
   while (1)
   {     
-      EventMessage mes;
-      DequeueResult res = eventQueue.tryToDecue(&eventQueue, &mes);
-      if(res == DEQUEUE_RESULT_SUCCESS)
-          mes.handlerReference(mes.eventParams);
-      checkButtonsState();
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -157,9 +154,9 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
@@ -172,7 +169,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -182,12 +179,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB;
-  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
@@ -252,7 +243,7 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 11;
+  htim1.Init.Prescaler = 5;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim1.Init.Period = TIMER_COUNTER_MAX_VALUE;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -268,6 +259,10 @@ static void MX_TIM1_Init(void)
     Error_Handler();
   }
   if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_OC_Init(&htim1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -289,6 +284,11 @@ static void MX_TIM1_Init(void)
     Error_Handler();
   }
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_TIMING;
+  if (HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
   {
     Error_Handler();
   }
@@ -332,7 +332,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 374;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 0;
+  htim2.Init.Period = 65535;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -546,7 +546,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, DAC_PIN0_Pin|STATUS_LED_Pin|SPEAKER_SHUTDOWN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, DAC_PIN2_Pin|SPI2_NSS_Pin|DAC_PIN3_Pin|DAC_PIN4_Pin 
+  HAL_GPIO_WritePin(GPIOB, DAC_PIN2_Pin|SPI2_NSS_Pin|DAC_PIN3_Pin|DAC_PIN4_Pin
                           |DAC_PIN5_Pin|DAC_PIN6_Pin|DAC_PIN7_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
@@ -559,17 +559,17 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : GPIO1_Pin GPIO2_Pin GPIO3_Pin GPIO4_Pin 
+  /*Configure GPIO pins : GPIO1_Pin GPIO2_Pin GPIO3_Pin GPIO4_Pin
                            GPIO5_Pin GPIO6_Pin GPIO7_Pin GPIO8_Pin */
-  GPIO_InitStruct.Pin = GPIO1_Pin|GPIO2_Pin|GPIO3_Pin|GPIO4_Pin 
+  GPIO_InitStruct.Pin = GPIO1_Pin|GPIO2_Pin|GPIO3_Pin|GPIO4_Pin
                           |GPIO5_Pin|GPIO6_Pin|GPIO7_Pin|GPIO8_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : DAC_PIN2_Pin SPI2_NSS_Pin DAC_PIN3_Pin DAC_PIN4_Pin 
+  /*Configure GPIO pins : DAC_PIN2_Pin SPI2_NSS_Pin DAC_PIN3_Pin DAC_PIN4_Pin
                            DAC_PIN5_Pin DAC_PIN6_Pin DAC_PIN7_Pin */
-  GPIO_InitStruct.Pin = DAC_PIN2_Pin|SPI2_NSS_Pin|DAC_PIN3_Pin|DAC_PIN4_Pin 
+  GPIO_InitStruct.Pin = DAC_PIN2_Pin|SPI2_NSS_Pin|DAC_PIN3_Pin|DAC_PIN4_Pin
                           |DAC_PIN5_Pin|DAC_PIN6_Pin|DAC_PIN7_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -586,49 +586,17 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-static void initFatFS()
+
+void initUSB_Clock(void)
 {
-    FRESULT res;
-    // mount the default drive
-    res = f_mount(&fs, "", 0);
-    if(res != FR_OK) 
-    {
-       return;
-    }
-
-    uint32_t freeClust;
-    FATFS* fs_ptr = &fs;
-    // Warning! This fills fs.n_fatent and fs.csize!
-    res = f_getfree("", &freeClust, &fs_ptr);
-    
-    if(res == FR_NOT_READY)
-    {
-
-    }
-    
-    if(res != FR_OK) {
-         //try to create filesystem
-        res = f_mkfs("", 0, 512);
-        if(res != FR_OK)
-        {
-            return;
-        }
-        res = f_getfree("", &freeClust, &fs_ptr);
-        if(res != FR_OK)
-        {
-            return;
-        }
-    }
-
-    uint32_t totalBlocks = (fs.n_fatent - 2) * fs.csize;
-    uint32_t freeBlocks = freeClust * fs.csize;
-
-    DIR dir;
-    res = f_opendir(&dir, "/");
-    if(res != FR_OK) {
-        return;
-    }
+	RCC_PeriphCLKInitTypeDef  clockInit;
+	clockInit.PeriphClockSelection = RCC_PERIPHCLK_USB;
+	clockInit.UsbClockSelection = RCC_USBCLKSOURCE_PLLCLK;
+	HAL_RCCEx_PeriphCLKConfig(&clockInit);
+	
+  __HAL_RCC_USB_CLK_ENABLE();
 }
+
 /* USER CODE END 4 */
 
 /**
@@ -639,12 +607,9 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
-    while(true)
+    while(1)
     {
-        setStatusLedOn();
-        HAL_Delay(500);
-        setStatusLedOff();
-        HAL_Delay(500);
+        
     }
   /* USER CODE END Error_Handler_Debug */
 }
@@ -658,7 +623,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

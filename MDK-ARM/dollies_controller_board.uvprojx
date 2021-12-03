@@ -227,7 +227,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -373,7 +373,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;          ../Drivers/STM32F1xx_HAL_Driver/Inc;          ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;          ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;          ../Drivers/CMSIS/Include;          ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc;          ../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc;          ..\board_halyavino_lib;          ..\system;          ..\spi_flash;         ../Middlewares/Third_Party/FatFs/src</IncludePath>
+              <IncludePath>../Inc;  ../Drivers/STM32F1xx_HAL_Driver/Inc;  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;  ../Drivers/CMSIS/Include;  ..\board_halyavino_lib;  ..\spi_flash;  ..\FreeRTOS-LTS\FreeRTOS\FreeRTOS-Kernel\include;  ..\platform_board_halyavino_zero;  ..\FreeRTOS-LTS\FreeRTOS\FreeRTOS-Kernel\portable\RVDS\ARM_CM3;  ..\task_fs;  ..\..\common\usb_transfer_proto;  ..\data_structs;  ..\task_usb;  ..\..\common\connection_lib;  ..\tinyusb\src;  ..\FatFS\source;  ..\MDK-ARM;  ..\task_device</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -427,44 +427,71 @@
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
+              <FileName>free_rtos_port_impl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\platform_board_halyavino_zero\free_rtos_port_impl.c</FilePath>
+            </File>
+            <File>
+              <FileName>multy_thread_buffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\multy_thread_buffer.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
             </File>
             <File>
-              <FileName>user_diskio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/user_diskio.c</FilePath>
-            </File>
-            <File>
-              <FileName>fatfs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/fatfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>usb_device.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/usb_device.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_conf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/usbd_conf.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_desc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/usbd_desc.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_custom_hid_if.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/usbd_custom_hid_if.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f1xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/stm32f1xx_it.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>2</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
+                    <VariousControls>
+                      <MiscControls>--gnu</MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
             </File>
             <File>
               <FileName>stm32f1xx_hal_msp.c</FileName>
@@ -482,19 +509,9 @@
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_pcd.c</FileName>
+              <FileName>stm32f1xx_hal_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_pcd_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_ll_usb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c</FilePath>
+              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c</FilePath>
             </File>
             <File>
               <FileName>stm32f1xx_hal.c</FileName>
@@ -547,11 +564,6 @@
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f1xx_hal_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c</FilePath>
@@ -579,136 +591,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Middlewares/USB_Device_Library</GroupName>
-          <Files>
-            <File>
-              <FileName>usbd_core.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_ctlreq.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_ioreq.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_customhid.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>board_halyavino_lib</GroupName>
-          <Files>
-            <File>
-              <FileName>led_hardware_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\board_halyavino_lib\led_hardware_driver.c</FilePath>
-            </File>
-            <File>
-              <FileName>status_led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\board_halyavino_lib\status_led.c</FilePath>
-            </File>
-            <File>
-              <FileName>dac.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\board_halyavino_lib\dac.c</FilePath>
-            </File>
-            <File>
-              <FileName>calling_timer_control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\board_halyavino_lib\calling_timer_control.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>system</GroupName>
-          <Files>
-            <File>
-              <FileName>led_file.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\led_file.c</FilePath>
-            </File>
-            <File>
-              <FileName>led_channel_manager.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\led_channel_manager.c</FilePath>
-            </File>
-            <File>
-              <FileName>small_file_reader.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\small_file_reader.c</FilePath>
-            </File>
-            <File>
-              <FileName>global_device_manager.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\global_device_manager.c</FilePath>
-            </File>
-            <File>
-              <FileName>device_request_handler.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\device_request_handler.c</FilePath>
-            </File>
-            <File>
-              <FileName>event_queue.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\event_queue.c</FilePath>
-            </File>
-            <File>
-              <FileName>file_request_handler.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\file_request_handler.c</FilePath>
-            </File>
-            <File>
-              <FileName>file_transfer_control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\file_transfer_control.c</FilePath>
-            </File>
-            <File>
-              <FileName>gpio_channel_manager.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\gpio_channel_manager.c</FilePath>
-            </File>
-            <File>
-              <FileName>multy_thread_buffer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\multy_thread_buffer.c</FilePath>
-            </File>
-            <File>
-              <FileName>script_parser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\script_parser.c</FilePath>
-            </File>
-            <File>
-              <FileName>sound_manager.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\sound_manager.c</FilePath>
-            </File>
-            <File>
-              <FileName>stream_file_buffer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\stream_file_buffer.c</FilePath>
-            </File>
-            <File>
-              <FileName>usb_bridge.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\usb_bridge.c</FilePath>
-            </File>
-            <File>
-              <FileName>wav_file.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\system\wav_file.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>spi_flash</GroupName>
           <Files>
             <File>
@@ -716,30 +598,398 @@
               <FileType>1</FileType>
               <FilePath>..\spi_flash\spi_flash.c</FilePath>
             </File>
+            <File>
+              <FileName>flash_disk_access_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\spi_flash\flash_disk_access_wrapper.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Middlewares/FatFs</GroupName>
+          <GroupName>FreeRTOS</GroupName>
           <Files>
+            <File>
+              <FileName>list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FreeRTOS-LTS\FreeRTOS\FreeRTOS-Kernel\list.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FreeRTOS-LTS\FreeRTOS\FreeRTOS-Kernel\queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>tasks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FreeRTOS-LTS\FreeRTOS\FreeRTOS-Kernel\tasks.c</FilePath>
+            </File>
+            <File>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FreeRTOS-LTS\FreeRTOS\FreeRTOS-Kernel\timers.c</FilePath>
+            </File>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FreeRTOS-LTS\FreeRTOS\FreeRTOS-Kernel\portable\RVDS\ARM_CM3\port.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>taskFS</GroupName>
+          <Files>
+            <File>
+              <FileName>task_fs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_fs\task_fs.c</FilePath>
+            </File>
+            <File>
+              <FileName>emulated_file.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_fs\emulated_file.c</FilePath>
+            </File>
+            <File>
+              <FileName>file_device_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_fs\file_device_wrapper.c</FilePath>
+            </File>
             <File>
               <FileName>diskio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/diskio.c</FilePath>
+              <FilePath>..\FatFS\source\diskio.c</FilePath>
             </File>
             <File>
               <FileName>ff.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/ff.c</FilePath>
+              <FilePath>..\FatFS\source\ff.c</FilePath>
             </File>
             <File>
-              <FileName>ff_gen_drv.c</FileName>
+              <FileName>ffsystem.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c</FilePath>
+              <FilePath>..\FatFS\source\ffsystem.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>taskUSB</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>2</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <useXO>2</useXO>
+                <v6Lang>0</v6Lang>
+                <v6LangP>0</v6LangP>
+                <vShortEn>0</vShortEn>
+                <vShortWch>0</vShortWch>
+                <VariousControls>
+                  <MiscControls>--gnu</MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
+          <Files>
+            <File>
+              <FileName>task_usb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_usb\task_usb.c</FilePath>
             </File>
             <File>
-              <FileName>syscall.c</FileName>
+              <FileName>hid_reports.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/option/syscall.c</FilePath>
+              <FilePath>..\task_usb\hid_reports.c</FilePath>
+            </File>
+            <File>
+              <FileName>msc_disk.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_usb\msc_disk.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_descriptors.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_usb\usb_descriptors.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>usbProto</GroupName>
+          <Files>
+            <File>
+              <FileName>usb_transfer_protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\common\usb_transfer_proto\usb_transfer_protocol.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>dataStructs</GroupName>
+          <Files>
+            <File>
+              <FileName>data_queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\data_structs\data_queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>stream_file_buffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\data_structs\stream_file_buffer.c</FilePath>
+            </File>
+            <File>
+              <FileName>filesystem_object_descriptor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\data_structs\filesystem_object_descriptor.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>connectionLib</GroupName>
+          <Files>
+            <File>
+              <FileName>connection_proto_usb_adapter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\common\connection_lib\connection_proto_usb_adapter.c</FilePath>
+            </File>
+            <File>
+              <FileName>user_info_handler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\common\connection_lib\user_info_handler.c</FilePath>
+            </File>
+            <File>
+              <FileName>connection_proto_header_serializer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\common\connection_lib\connection_proto_header_serializer.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>tinyusb</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>2</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <useXO>2</useXO>
+                <v6Lang>0</v6Lang>
+                <v6LangP>0</v6LangP>
+                <vShortEn>0</vShortEn>
+                <vShortWch>0</vShortWch>
+                <VariousControls>
+                  <MiscControls>--gnu</MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
+          <Files>
+            <File>
+              <FileName>tusb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\tinyusb\src\tusb.c</FilePath>
+            </File>
+            <File>
+              <FileName>dcd_stm32_fsdev.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\tinyusb\src\portable\st\stm32_fsdev\dcd_stm32_fsdev.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\tinyusb\src\device\usbd.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\tinyusb\src\device\usbd_control.c</FilePath>
+            </File>
+            <File>
+              <FileName>tusb_fifo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\tinyusb\src\common\tusb_fifo.c</FilePath>
+            </File>
+            <File>
+              <FileName>msc_device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\tinyusb\src\class\msc\msc_device.c</FilePath>
+            </File>
+            <File>
+              <FileName>hid_device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\tinyusb\src\class\hid\hid_device.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>taskDevice</GroupName>
+          <Files>
+            <File>
+              <FileName>task_device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\task_device.c</FilePath>
+            </File>
+            <File>
+              <FileName>executing_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\executing_manager.c</FilePath>
+            </File>
+            <File>
+              <FileName>status_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\status_led.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ledChannel</GroupName>
+          <Files>
+            <File>
+              <FileName>led_channel_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\led\led_channel_manager.c</FilePath>
+            </File>
+            <File>
+              <FileName>led_file_parser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\led\led_file_parser.c</FilePath>
+            </File>
+            <File>
+              <FileName>led_port_stm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\led\led_port_stm.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>speaker</GroupName>
+          <Files>
+            <File>
+              <FileName>dac_stm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\speaker\dac_stm.c</FilePath>
+            </File>
+            <File>
+              <FileName>sound_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\speaker\sound_manager.c</FilePath>
+            </File>
+            <File>
+              <FileName>wav_file_parser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\speaker\wav_file_parser.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>GPIO</GroupName>
+          <Files>
+            <File>
+              <FileName>gpio_channel_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\gpio\gpio_channel_manager.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio_port_stm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\gpio\gpio_port_stm.c</FilePath>
+            </File>
+            <File>
+              <FileName>button_channel_descriptor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\task_device\gpio\button_channel_descriptor.c</FilePath>
             </File>
           </Files>
         </Group>

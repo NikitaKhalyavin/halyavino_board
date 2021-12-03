@@ -23,7 +23,7 @@
 #include "usbd_custom_hid_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-#include <usb_bridge.h>
+#include "usb_bridge.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -32,7 +32,7 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-static uint8_t parseReportMessage(uint8_t* reportData);
+
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -102,13 +102,13 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
     0x15, 0x00,                  // LOGICAL_MINIMUM (0)
     0x25, 0xff,                  // LOGICAL_MAXIMUM (1)
     0x75, 0x08,                  // REPORT_SIZE (8)
-    0x95, 0x3f,                  // REPORT_COUNT (63 + ID)
+    0x95, 0x3f,                  // REPORT_COUNT (64)
     0x91, 0x82,                  // OUTPUT (Data,Var,Abs,Vol)
     
     0x85, 0x02,                  // REPORT_ID (2)
     0x09, 0x01,                  // USAGE (Vendor Usage 1)
     0x75, 0x08,                  // REPORT_SIZE (8)
-    0x95, 0x3f,                  // REPORT_COUNT (63 + ID)
+    0x95, 0x3f,                  // REPORT_COUNT (64)
     0x81, 0x82,                  // INPUT (Data,Var,Abs,Vol)
   /* USER CODE END 0 */
   0xC0    /*     END_COLLECTION	             */
@@ -127,10 +127,9 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
   * @{
   */
 extern USBD_HandleTypeDef hUsbDeviceFS;
-extern UsbBridge usbBridge;
 
 /* USER CODE BEGIN EXPORTED_VARIABLES */
-
+extern UsbBridge usbBridge;
 /* USER CODE END EXPORTED_VARIABLES */
 /**
   * @}
@@ -197,7 +196,7 @@ static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state)
   /* USER CODE BEGIN 6 */
   USBD_CUSTOM_HID_HandleTypeDef     *hhid = (USBD_CUSTOM_HID_HandleTypeDef *)hUsbDeviceFS.pClassData;
     
-  return usbBridge.interruptSideHandler(&usbBridge, &(hhid->Report_buf[1]));
+  return usbBridge.interruptSideHandler(&usbBridge, hhid->Report_buf);
     
   //return (USBD_OK);
   /* USER CODE END 6 */
